@@ -45,7 +45,7 @@
 1. log in/sign in a user
 2. generates a global view and a user view
 
-##Specifications stage 2
+##Specifications stage 3
 + create a form for the user
 + buttons are active (drunk/location/with who/rating.
 + if user hasn't logged in, message to log/sign in.
