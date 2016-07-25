@@ -1,4 +1,7 @@
 #Description
+This is our first app challenge at SkylabCoders summer 2016. 
+
+The app allows you to list the beers that you have dunk, rate them and list your favourites. You can also add a picture to cath the moment. 
 
 ##Team
 
