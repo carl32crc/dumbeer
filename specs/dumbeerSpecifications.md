@@ -9,10 +9,11 @@
 
 ##Requirements stage 1
 **Home page (1st. Global view)** 
-    + search form
-    + advanced filter (type of beer, brand)
-    + show list of results according to key word
-    + click 1 result
++ search form
++ advanced filter (type of beer, brand)
++ show list of results according to key word
++ click 1 result
+
 **Beer page (2nd. Global view)**
 + show beer specifications 
 + drink/like button 
