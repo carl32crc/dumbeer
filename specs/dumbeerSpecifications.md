@@ -43,7 +43,7 @@
 
 #STAGE 3
 1. log in/sign in user
-2. generates a global view and a __user view__
+2. generates a global view and a **user view**
 
 ##Specifications stage 3
 + create a form for the user
