@@ -7,7 +7,7 @@
 6. set favorite if you liked the beer
 7. when click at profile icon, list favorite beers saved
 
-##Requirements stage 1
+##Specifications stage 1
 **Home page (1st. Global view)** 
 + search form
 + advanced filter (type of beer, brand)
@@ -30,7 +30,7 @@
 2. display a map with near places to select your bar.
 3. take a picture of the place/moment
 
-##Requirements stage 2
+##Specifications stage 2
 + button location (bar location)
 + ask for user permission to take coordinates
 + links the information with google or 4square API
@@ -45,7 +45,7 @@
 1. log in/sign in a user
 2. generates a global view and a user view
 
-##Requirements stage 2
+##Specifications stage 2
 + create a form for the user
 + buttons are active (drunk/location/with who/rating.
 + if user hasn't logged in, message to log/sign in.
