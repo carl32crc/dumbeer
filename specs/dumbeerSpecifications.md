@@ -22,6 +22,8 @@
 + when click user icon, show favorites (according to like button)
 + sort out the favorite list according to rating, date or type
 
+![home and beer page](IMG_20160725_141911503.jpg)
+![detailed page and profile](IMG_20160725_141918686.jpg)
 
 #STAGE 2
 1. when drinking a beer in a bar, click the checkout button and take the coordinates
