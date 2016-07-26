@@ -1,3 +1,6 @@
+
+$yellow: #ffc602;
+
 body {
 	background: #fff;
 	padding-top: 50px;
@@ -5,20 +8,26 @@ body {
 
 
 #logo { 
-	min-width: 6%;
-	max-width: 6%;
+	
+	max-width: 98px;
 	float: left;
 	margin: auto;
 	padding-top: 10px;
 
 }
 
-#userIcon {
-	min-width:4%;
-	max-width: 4%;
+.userIcon {
 	float: right;
-	margin: 0 auto;
+	margin: 5px auto;
 	padding-top: 10px;
+	padding-bottom: 5px;
+	font-size: 30px;
+	color: $yellow;
+	border: 2px solid $yellow;
+	border-radius:50%;
+	text-align: center;
+	width: 50px;
+	height: 50px;
 }
 
 #backgroundBeer {
@@ -35,7 +44,59 @@ body {
 	margin-top: 30px;
 }
 
-#advancedOptions {
-	padding-top: 5px;
+#advancedOptionsParag {
+	font-family: "arial", serif, sans-serif;
+	color: white;
+	font-size: 1em;
+	margin: 0 auto;
+	display: block;
+	padding-left: 3em;
+
 }
+
+#advancedOptions {
+	font-family: "arial", serif, sans-serif;
+	color: white;
+	font-size: 1em;
+	margin: 0 auto;
+}
+
+.filter {
+	display: inline;
+}
+
+.beerResult {
+	border: 0px solid red;
+	max-width: 300px;
+	margin: 0 auto;
+}
+
+#beerImage {
+	width: 100%;
+
+	
+}
+
+.btn {
+  color: black;
+  background: white;
+  font-weight: normal;
+  border: 1px solid $yellow;
+  &:hover {
+	  color: white;
+	  background: $yellow;
+	  text-shadow: none;
+  }
+}
+ 
+
+.backgroundList {
+	padding-bottom: 80px;
+	padding-top: 80px; 
+	background-image: url("../html/img/dumbeerTransparent.png");
+	background-position: bottom right;
+	background-repeat: no-repeat;
+}
+
+
 

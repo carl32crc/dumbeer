@@ -31,8 +31,8 @@
     <header>
       <nav class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-          <a><img id="logo" src="img/dumbeer.png"></img></a>
-          <a><img id="userIcon" src="img/user.png"></img></a>
+          <a><img id="logo" src="img/dumbeer-navbar.png"></img></a>
+          <a><span class="glyphicon glyphicon-user userIcon"></span></a>
         </div>
       </nav>
     </header>
@@ -44,55 +44,55 @@
           <!--beer bakground picture by means of CSS-->
 
           <div class="row">
-            <div class="col-xs-6 col-xs-offset-3">
-              <form class="navbar-form navbar-left" role="search" id="searchBar">
+            <div class="col-sm-6 col-sm-offset-3">
+              <form>
                 <div class="form-group">
                   <input type="text" class="form-control" placeholder="Search">
                 </div>
-                <button type="submit" class="btn glyphicon glyphicon-search"></button>
+                <button type="submit" class="btn glyphicon glyphicon-search visible-xs"></button>
               </form> 
             </div>
           </div>
 
 
           <div class="row">
-            <div class="col-xs-6 col-xs-offset-3">
-               <p>Advanced Options</p>
+            <div class="col-sm-6 col-sm-offset-3">
+               <p id="advancedOptionsParag">Advanced Options</p>
             </div>
           </div>
 
         <div class="row">
-          <div class="col-xs-6 col-xs-offset-3">
+          <div class="col-sm-6 col-sm-offset-3">
 
             <!--beggining 1st filter options-->
-            <ul class="dropdown">
-              <a href="#" class="dropdown-toggle" id="advancedOptions" data-toggle="dropdown">Type of Beer<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li class="dropdown-plus-title">Type of Beer<b class="pull-right glyphicon glyphicon-chevron-up"></b></li>
-                <li><a href="#">Irish Dry Style Stout</a></li>
-                <li><a href="#">London Sweet Style Stout</a></li>
-                <li><a href="#">Foreign Style Stout</a></li>
-                <li><a href="#">Oatmeal Stout</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Other</a></li>
+           
+              <ul class="dropdown filter">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="advancedOptions">Type of Beer<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <!-- <li class="dropdown-plus-title">Type of Beer<b class="pull-right glyphicon glyphicon-chevron-up"></b></li> -->
+                  <li><a href="#">Irish Dry Style Stout</a></li>
+                  <li><a href="#">London Sweet Style Stout</a></li>
+                  <li><a href="#">Foreign Style Stout</a></li>
+                  <li><a href="#">Oatmeal Stout</a></li>
+                  <li><a href="#">Other</a></li>
+                </ul>
               </ul>
-            </ul>
-            <!--/1st filter options-->
+              <!--/1st filter options-->
 
-            <!--beggining 2nd filter options-->
-            <ul class="dropdown-right">
-              <a href="#" class="dropdown-toggle" id="advancedOptions" data-toggle="dropdown">Region<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li class="dropdown-plus-title">Region<b class="pull-right glyphicon glyphicon-chevron-up"></b></li>
-                <li><a href="#">Irish Dry Style Stout</a></li>
-                <li><a href="#">London Sweet Style Stout</a></li>
-                <li><a href="#">Foreign Style Stout</a></li>
-                <li><a href="#">Oatmeal Stout</a></li>
-                <li class="divider"></li>
-                <li><a href="#">Other</a></li>
+              <!--beggining 2nd filter options-->
+              <ul class="dropdown filter">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" id="advancedOptions">Region<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <!-- <li class="dropdown-plus-title">Region<b class="pull-right glyphicon glyphicon-chevron-up"></b></li> -->
+                  <li><a href="#">Irish Dry Style Stout</a></li>
+                  <li><a href="#">London Sweet Style Stout</a></li>
+                  <li><a href="#">Foreign Style Stout</a></li>
+                  <li><a href="#">Oatmeal Stout</a></li>
+                  <li><a href="#">Other</a></li>
+                </ul>
               </ul>
-            </ul>
             <!--/2nd filter options-->
+            
 
           </div>
         </div>
@@ -102,28 +102,39 @@
     <!--/Jumbotron-->
 
     <!-- Beginning body content. List of beers displayed-->
-    <div class="container">
+    <div class="container backgroundList">
       
       <div class="row">
-        <div class="col-md-4">
-          <img src="img/beer1.png">
-          <p>Irish Dry Style Stout</p>
-          <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+        <div class="col-sm-3">
+          <section class="beerResult">
+            <img id="beerImage" src="img/beer1.png">
+            <p>Irish Dry Style Stout</p>
+            <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+          </section>
         </div>
-        <div class="col-md-4">
-          <img src="img/beer2.png">
-          <p>London Sweet Style Stout</p>
-          <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <img src="img/beer3.png">
-          <p>Foreign Style Stout</p>
-          <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+
+        <div class="col-sm-3">
+          <section class="beerResult">
+            <img id="beerImage" src="img/beer1.png">
+            <p>Irish Dry Style Stout</p>
+            <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+          </section>
         </div>
-        <div class="col-md-4">
-          <img src="img/beer4.png">
-          <p>Oatmeal Stout</p>
-          <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+
+        <div class="col-sm-3">
+          <section class="beerResult">
+            <img id="beerImage" src="img/beer1.png">
+            <p>Irish Dry Style Stout</p>
+            <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+          </section>
+        </div>
+
+        <div class="col-sm-3">
+          <section class="beerResult">
+            <img id="beerImage" src="img/beer1.png">
+            <p>Irish Dry Style Stout</p>
+            <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+          </section>
         </div>
       </div>
 
