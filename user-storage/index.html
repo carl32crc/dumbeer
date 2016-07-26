@@ -1,18 +1,27 @@
 <div ng-app="app">
     <div ng-controller="CheckInController">
-		<div ng-repeat="beer in beers">
+
+		<div ng-repeat="beer in storage.beers">
 			{{beer.name}}:
 			<button ng-click="checkIn(beer)" ng-disabled="hasCheckedIn">Check in</button>
+			<div ng-controller="RatingController">
+				Rating: {{$parent.beer.rating}}
+				<input type="radio" name="{{$parent.beer.id}}Rating" value="1" ng-model="$parent.beer.rating" ng-change="rate($parent.beer)">
+				<input type="radio" name="{{$parent.beer.id}}Rating" value="2" ng-model="$parent.beer.rating" ng-change="rate($parent.beer)">
+				<input type="radio" name="{{$parent.beer.id}}Rating" value="3" ng-model="$parent.beer.rating" ng-change="rate($parent.beer)">
+				<input type="radio" name="{{$parent.beer.id}}Rating" value="4" ng-model="$parent.beer.rating" ng-change="rate($parent.beer)">
+				<input type="radio" name="{{$parent.beer.id}}Rating" value="5" ng-model="$parent.beer.rating" ng-change="rate($parent.beer)">
+			</div>
 		</div>
-    	<br>
-    </div>
 
-    <div ng-show="storage.checkIn" ng-controller="HistoryController">
-		Check in history:
-		<div ng-repeat="checkin in storage.checkIn">
-			<strong>{{ checkin.beerName }}</strong> on <time>{{ checkin.date | date : 'short' }}</time>
+    	<br>
+		<div ng-show="storage.checkIn" ng-controller="HistoryController">
+			<h2>Check in history:</h2>
+			<div ng-repeat="checkin in storage.checkIn">
+				<strong>{{ checkin.beerName }}</strong> on <time>{{ checkin.date | date : 'short' }}</time>
+			</div>
 		</div>
-    </div>	
+    </div>
     
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
@@ -21,20 +30,25 @@
     	angular.module('app', ['ngStorage'])
 	    	.controller('CheckInController', function($scope, $localStorage) {
 	    		$scope.storage = $localStorage;
-	    		$scope.beers = [
-	    			{
-	    				id: 1,
-	    				name: 'Estrella',
-	    			},
-	    			{
-	    				id: 2,
-	    				name: 'Sierra Nevada',
-	    			},
-	    			{
-	    				id: 3,
-	    				name: 'New Belgium',
-	    			}
-	    		];
+
+	    		if( $scope.storage.beers === undefined){
+	    			var beers = [
+	    				{
+	    					id: 1,
+	    					name: 'Estrella',
+	    				},
+	    				{
+	    					id: 2,
+	    					name: 'Sierra Nevada',
+	    				},
+	    				{
+	    					id: 3,
+	    					name: 'New Belgium',
+	    				}
+	    			];
+	    			$scope.storage.beers = beers;		
+	    		}		    	
+	    		
 	    		$scope.hasCheckedIn = false;
 				$scope.checkIn = function(beer) {
 					if($scope.hasCheckedIn === false){
@@ -54,6 +68,13 @@
 	    	})
 	    	.controller('HistoryController', function($scope, $localStorage) {
 	    		$scope.storage = $localStorage;	    		
+	    	})
+	    	.controller('RatingController', function($scope, $localStorage) {
+	    		$scope.storage = $localStorage;	   
+	    		$scope.rate = function(beerObj){
+	    			console.log($scope.beer.rating);
+	    			beerObj.rating = $scope.beer.rating;
+	    		}
 	    	})
     </script>
 </div>
