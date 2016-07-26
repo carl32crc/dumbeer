@@ -38,7 +38,6 @@
 + select the bar
 + create button to take picture 
 + load 1 picture and can't modify in the future
-+ create a button to link another person (for example if he/she is in the bar)
 
 
 #STAGE 3
@@ -47,11 +46,13 @@
 
 ##Specifications stage 3
 + create a form for the user
-+ buttons are active (drunk/location/with who/rating.
++ create a button to link another person (for example if he/she is in the bar)
++ buttons are active (drunk/location/with who/rating)
 + if user hasn't logged in, message to log/sign in.
 + user view displayed
 + default view: list of different kind of beers you've drunk, (from most recent to old ones).
 + filter menu to customize view according to ratings, type of beer, date, alphabetically, locations
+
 
 
 #STAGE 4
