@@ -12,28 +12,44 @@
 	
 	<div class="container">
 		<div ng-controller="searcher">
-			<form ng-submit="submit()">
-		    	<div class="col-sm-6 col-sm-offset-3 input-group">
+			<form ng-submit="submit()" class="col-sm-6 col-sm-offset-3 input-group">
+		    	<div  class="input-group">
 			    	<input type="text" class="form-control" placeholder="Search for..." ng-model="beerToSearch">
 					<span class="input-group-btn">
 						<button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
 					</span>
 				</div>
-				<div>
+				<div class="input-group">
 					<p>Advanced filters:</p>
-					<fieldset>
-						<select class="form-control"> Beer type
-						  <option>1</option>
-						  <option>2</option>
-						  <option>3</option>
-						  <option>4</option>
-						  <option>5</option>
+					<fieldset> organic:
+						<select class="form-control" ng-model="isOrganic">
+						  <option value="">Select an organic type</option>
+						  <option value="Y">si</option>
+						  <option value="N">no</option>
 						</select>
 					</fieldset>
+					<fieldset> style of the beer:
+						<select class="form-control" ng-model="styleBeer">
+						  <option value="">Select a type</option>
+						  <option value="1">British Origin Alesless than 10</option>
+						  <option value="2">Irish Origin Ales</option>
+						  <option value="3">North American Origin Ales</option>
+						  <option value="4">German Origin Ales</option>
+						  <option value="5">Belgian And French Origin Ales</option>
+						  <option value="6">International Ale Styles</option>
+						  <option value="7">European-germanic Lager</option>
+						  <option value="8">North American Lager</option>
+						  <option value="9">Other Lager</option>
+						  <option value="10">International Styles</option>
+						  <option value="11">Hybrid/mixed Beer</option>
+						  <option value="12">Mead, Cider, & Perry</option>
+						</select>
+					</fieldset>
+					region
 				</div>
 			</form>
 			<div>
-				<p ng-repeat="beers in resultSearchedBeers"> {{ beers.name }} </p>
+				<p ng-repeat="beers in resultSearchedBeers | filter : { isOrganic : isOrganic  , style : { categoryId : styleBeer } }"> {{ beers.name }} </p>
 			</div>
 	    </div>
 	</div>
@@ -41,7 +57,7 @@
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js'></script>
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.js'></script>
 
-	<script src="buscador.js"></script>
+	<script src="js/buscador.js"></script>
 
 </body>
 </html>
