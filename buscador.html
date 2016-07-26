@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="dumbeer">
+<head>
+	<meta charset="UTF-8">
+	<title>Dumbeer</title>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+</head>
+<body>
+	
+	<div class="container">
+		<div ng-controller="searcher">
+			<form ng-submit="submit()">
+		    	<div class="col-sm-6 col-sm-offset-3 input-group">
+			    	<input type="text" class="form-control" placeholder="Search for..." ng-model="beerToSearch">
+					<span class="input-group-btn">
+						<button class="btn btn-default" type="button"><i class="glyphicon glyphicon-search"></i></button>
+					</span>
+				</div>
+				<div>
+					<p>Advanced filters:</p>
+					<fieldset>
+						<select class="form-control"> Beer type
+						  <option>1</option>
+						  <option>2</option>
+						  <option>3</option>
+						  <option>4</option>
+						  <option>5</option>
+						</select>
+					</fieldset>
+				</div>
+			</form>
+			<div>
+				<p ng-repeat="beers in resultSearchedBeers"> {{ beers.name }} </p>
+			</div>
+	    </div>
+	</div>
+	
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-route.js'></script>
+
+	<script src="buscador.js"></script>
+
+</body>
+</html>
