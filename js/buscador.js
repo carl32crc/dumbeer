@@ -4,7 +4,7 @@ angular.module( 'dumbeer', [ 'ngRoute' ] )
 
 		$scope.resultSearchedBeers = "";
 
-		var urlApiBeers = 'https://quiet-inlet-67115.herokuapp.com/api/search/all?q=';
+		var urlApiBeers = 'https://quiet-inlet-67115.herokuapp.com/api/search/beers?q=';
 
 		$scope.submit = function() {
 
