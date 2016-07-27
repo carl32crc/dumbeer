@@ -71,11 +71,18 @@ angular.module( 'controllers', [ ] )
             if($scope.storage.checkIn === undefined){
               $scope.storage.checkIn = [];
             }
+
             var date = new Date();
+            var label = 'http://www.mosaicdevelopmentfl.com/Common/images/jquery/galleria/image-not-found.png';
+
+            if(beer.labels !== undefined){
+              label = beer.labels.medium;
+            }
             var checkInObject = {
               beerId: beer.id,
               beerName: beer.name,
-              date: date            
+              date: date,
+              label: label           
             }
             $scope.storage.checkIn.push(checkInObject)
             $scope.hasCheckedIn = true;

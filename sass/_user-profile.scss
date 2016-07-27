@@ -21,6 +21,13 @@
 	.glyphicon {
 		color: $yellow;
 	}
+	.img-circle {
+		display: block;
+		width: 80px;
+		height: 80px;
+		background-size: cover;
+		background-position: center;
+	}
 }
 
 .imgUser {

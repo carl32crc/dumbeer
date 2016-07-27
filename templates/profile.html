@@ -6,7 +6,7 @@
     <h1 class="page-header">My beers</h1>
     <div class="group" ng-repeat="checkin in storage.checkIn">
       <div class="col-sm-2">
-        <img class="img-circle" src="img/estrella-icon.png" alt="">
+        <span class="img-circle" style="background-image:url({{checkin.label}})"></span>
       </div>
       <div class="col-sm-4">
         <p><strong>{{ checkin.beerName }}</strong></p>
