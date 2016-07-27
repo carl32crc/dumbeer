@@ -35,8 +35,7 @@ function showMap(latLng) {
   //Configuracion del mapa
   var mapOptions = {
     center: latLng,
-    zoom: 18,
-    mapTypeId: google.maps.MapTypeId.ROADMAP
+    zoom: 18
   };
   map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
 }
@@ -49,11 +48,13 @@ function addNearByPlaces(latLng) {
 
   var request = {
     location: latLng,
-    radius: 1000,
-    types: ['bar','food', 'cafe', 'restaurant']
+    radius: 100,
+    types: ['bar', 'restaurant']
   };
 
+  //nearByService.radarSearch(request, handleNearBySearchResults);
   nearByService.nearbySearch(request, handleNearBySearchResults);
+  //nearByService.textSearch(request, handleNearBySearchResults);
 }
 
 //Funcion para incrementar los sitios que hemos predefinido en la funcion anterior
@@ -81,7 +82,7 @@ function createMarker(latLng, placeResult) {
  
   if (placeResult) {
     var marker = new google.maps.Marker({position: latLng, map: map, animation: google.maps.Animation.DROP, clickable: true});
-    var content = placeResult.name+'<br/>'+placeResult.vicinity+'<br/>'+placeResult.types;
+    var content = placeResult.name+'<br/>'+placeResult.vicinity;
     addInfoWindow(marker, latLng, content);
   }else {
     var marker = new google.maps.Marker(markerOptionsMyFlag);

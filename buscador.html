@@ -48,8 +48,25 @@
 					region
 				</div>
 			</form>
+
+		   <div class="container">
+	        	<div ng-view></div>
+	       </div>		
+			<div class="row">
+			  <div class="col-sm-6 col-md-4" ng-repeat="beers in resultSearchedBeers track by $index">
+			    <div class="thumbnail">
+			      <img src="{{ beers.labels.medium || imageNot }}" alt="beers_Image">
+			      <div class="caption">
+			        <h3>{{ beers.name }}</h3>
+			        <p>ABV:{{ beers.abv || beers.style.abvMax || beers.style.abvMin}}%</p>
+			        <p><a href="resultsBeer.html" class="btn btn-primary" role="button">More information</a></p>
+			      </div>
+			    </div>
+			  </div>
+
 			<div>
 				<p ng-repeat="beers in resultSearchedBeers | filter : { isOrganic : isOrganic  , style : { categoryId : styleBeer } }"> {{ beers.name }} </p>
+
 			</div>
 	    </div>
 	</div>

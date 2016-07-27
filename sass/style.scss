@@ -2,12 +2,12 @@
 $yellow: #ffc602;
 
 @import "age";
+@import "user-profile";
 
 body {
 	background: #fff;
 	padding-top: 50px;
 }
-
 
 #logo { 
 	
@@ -17,6 +17,7 @@ body {
 	padding-top: 10px;
 
 }
+
 
 .userIcon {
 	float: right;
@@ -106,6 +107,5 @@ body {
 	background-position: bottom right;
 	background-repeat: no-repeat;
 }
-
 
 
