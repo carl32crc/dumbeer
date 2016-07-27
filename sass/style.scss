@@ -1,6 +1,8 @@
 
 $yellow: #ffc602;
 
+@import "age";
+
 body {
 	background: #fff;
 	padding-top: 50px;
@@ -87,6 +89,14 @@ body {
 	  background: $yellow;
 	  text-shadow: none;
   }
+}
+
+.btn-primary {
+	background: $yellow;
+	color: #fff;
+	&:hover {
+	  	opacity: .8;
+	}
 }
  
 

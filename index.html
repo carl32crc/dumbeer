@@ -4,13 +4,16 @@
 	<meta charset="UTF-8">
 	<title>Document</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="dist/style.css">
 </head>
 <body>
 	<div ng-app="app">
-	    <div ng-controller="AgeController" class="text-center">
-	    	<h1>Hello! Are you 18 or older?</h1>
-	    	<button ng-click="saveAge()" class="btn btn-primary">Yes</button>
-	    	<a href="http://www.disney.com/" class="btn btn-default">No</a>
+	    <div ng-controller="AgeController" class="age-wrap">
+	    	<section class="age-box">
+		    	<h1>Hello! Are you 18 or older?</h1>
+		    	<button ng-click="saveAge()" class="btn btn-primary">Yes</button>
+		    	<a href="http://www.disney.com/" class="btn btn-default">No</a>
+	    	</section>
 	    </div>
 	    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
