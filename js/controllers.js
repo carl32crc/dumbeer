@@ -112,13 +112,18 @@ angular.module( 'controllers', [ ] )
       .controller('getRatingController', function($scope, $localStorage){
         $scope.storage = $localStorage;
         $scope.rating = function(beerId){
-          var beerRating = $scope.storage.ratings[beerId].rating;
-          return new Array(parseInt(beerRating));
+          if($scope.storage.ratings[beerId] !== undefined){
+            var beerRating = $scope.storage.ratings[beerId].rating;
+            return new Array(parseInt(beerRating));
+          }
         };
 
         $scope.ratingInv = function(beerId){
-          var beerRating = $scope.storage.ratings[beerId].rating;
-          return new Array(parseInt(5 - beerRating));
+          if($scope.storage.ratings[beerId] !== undefined){
+            var beerRating = $scope.storage.ratings[beerId].rating;
+            return new Array(parseInt(5 - beerRating));  
+          }
+          
         };
       })
 
