@@ -11,6 +11,14 @@ angular.module( 'config', [] )
 					templateUrl: '/templates/age.html',
 					controller: 'ageController'
 				})
+				.when('/specifications',{
+					templateUrl: '/templates/spec.html',
+					controller: 'specController'
+				})
+				.when('/myprofile',{
+					templateUrl: '/templates/profile.html',
+					controller: 'checkInController'
+				})
 				.otherwise({ redirectTo: '/' }); ;
 
 	})
