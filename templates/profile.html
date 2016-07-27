@@ -1,26 +1,24 @@
-<div class="col-sm-2 left-bar">
-  <img class="imgUser" src="img/usuario.png" alt="">
-  <p>User Name</p>
-</div>
-
-<div ng-show="storage.checkIn" ng-controller="historyController">  
-  <div class="col-sm-10 ">
+<section class="left-bar">
+  <img class="imgUser" src="img/dumbeer.png" alt="">
+  <!-- <p>User Name</p> -->
+</section>
+<section ng-show="storage.checkIn" ng-controller="historyController" class="profile-content">  
+    <h1 class="page-header">My beers</h1>
     <div class="group" ng-repeat="checkin in storage.checkIn">
       <div class="col-sm-2">
         <img class="img-circle" src="img/estrella-icon.png" alt="">
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-4">
         <p><strong>{{ checkin.beerName }}</strong></p>
         <time>{{ checkin.date | date : 'short' }}</time>
       </div>
       <div class="col-sm-3">
         <div ng-controller="getRatingController">
-          <i class="glyphicon glyphicon-star" ng-repeat="rating in rating($parent.checkin.beerId) track by $index"></i>
+          <i class="glyphicon glyphicon-star" ng-repeat="rating in rating($parent.checkin.beerId) track by $index"></i><i class="glyphicon glyphicon-star-empty" ng-repeat="rating in ratingInv($parent.checkin.beerId) track by $index"></i>
         </div>
       </div>
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <button class="btn btn-default">Specifications</button>
       </div>
     </div>
-  </div>
-</div>
+</section>

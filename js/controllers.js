@@ -102,4 +102,8 @@ angular.module( 'controllers', [ ] )
           var beerRating = $scope.storage.ratings[beerId].rating;
           return new Array(parseInt(beerRating));
         };
+        $scope.ratingInv = function(beerId){
+          var beerRating = $scope.storage.ratings[beerId].rating;
+          return new Array(parseInt(5 - beerRating));
+        };
       })

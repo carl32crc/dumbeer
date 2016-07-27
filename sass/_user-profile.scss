@@ -1,18 +1,46 @@
-
 .left-bar {
-	background: black;
-	height: 500px;
+	padding: 10px;
+	background: $yellow;
 	color: white;
 	text-align: center;
+	@media screen and (min-width: 600px){
+		width: 20%;
+		height: 100%;
+		padding-top: 70px;
+		position: fixed;
+		top: 0;
+		left: 0;
+	}
+}
+
+.profile-content {
+	padding: 0 20px;
+	@media screen and (min-width: 600px){
+		padding-left: 22%;
+	}
+	.glyphicon {
+		color: $yellow;
+	}
 }
 
 .imgUser {
-	width: 100%;
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+	max-width: 100px;
+	@media screen and (min-width: 600px){
+		max-width: 100%;
+	}
 }
 
 .group {
 	padding: 15px 0;
 	display: flex;
 	align-items: center;
-	border-bottom: 1px solid grey;
+	&:nth-child(even){
+		background: #f9f9f9;
+	}
+	@media screen and (max-width: 500px){
+		flex-wrap: wrap;
+	}
 }

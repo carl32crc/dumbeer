@@ -14,23 +14,26 @@ body {
 	max-width: 98px;
 	float: left;
 	margin: auto;
-	padding-top: 10px;
+	padding-top: 3px;
 
 }
 
+.navbar-fixed-top {
+	border: none;
+}
 
 .userIcon {
 	float: right;
 	margin: 5px auto;
-	padding-top: 10px;
-	padding-bottom: 5px;
+	padding-top: 6px;
 	font-size: 30px;
 	color: $yellow;
 	border: 2px solid $yellow;
 	border-radius:50%;
 	text-align: center;
-	width: 50px;
-	height: 50px;
+	width: 40px;
+	height: 40px;
+	overflow: hidden;
 }
 
 #backgroundBeer {
