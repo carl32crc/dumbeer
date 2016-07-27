@@ -4,9 +4,9 @@
 </section>
 <section ng-show="storage.checkIn" ng-controller="historyController" class="profile-content">  
     <h1 class="page-header">My beers</h1>
-    <div class="group" ng-repeat="checkin in storage.checkIn">
+    <div class="group" ng-repeat="checkin in storage.checkIn | orderBy : date:true">
       <div class="col-sm-2">
-        <img class="img-circle" src="img/estrella-icon.png" alt="">
+        <span class="img-circle" style="background-image:url({{checkin.label}})"></span>
       </div>
       <div class="col-sm-4">
         <p><strong>{{ checkin.beerName }}</strong></p>
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="col-sm-3">
-        <button class="btn btn-default">Specifications</button>
+        <a href="/#/specifications/{{ checkin.beerId }}" class="btn btn-default">Specifications</a>
       </div>
     </div>
 </section>

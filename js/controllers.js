@@ -71,11 +71,18 @@ angular.module( 'controllers', [ ] )
             if($scope.storage.checkIn === undefined){
               $scope.storage.checkIn = [];
             }
+
             var date = new Date();
+            var label = 'http://www.mosaicdevelopmentfl.com/Common/images/jquery/galleria/image-not-found.png';
+
+            if(beer.labels !== undefined){
+              label = beer.labels.medium;
+            }
             var checkInObject = {
               beerId: beer.id,
               beerName: beer.name,
-              date: date            
+              date: date,
+              label: label           
             }
             $scope.storage.checkIn.push(checkInObject)
             $scope.hasCheckedIn = true;
@@ -105,13 +112,18 @@ angular.module( 'controllers', [ ] )
       .controller('getRatingController', function($scope, $localStorage){
         $scope.storage = $localStorage;
         $scope.rating = function(beerId){
-          var beerRating = $scope.storage.ratings[beerId].rating;
-          return new Array(parseInt(beerRating));
+          if($scope.storage.ratings[beerId] !== undefined){
+            var beerRating = $scope.storage.ratings[beerId].rating;
+            return new Array(parseInt(beerRating));
+          }
         };
 
         $scope.ratingInv = function(beerId){
-          var beerRating = $scope.storage.ratings[beerId].rating;
-          return new Array(parseInt(5 - beerRating));
+          if($scope.storage.ratings[beerId] !== undefined){
+            var beerRating = $scope.storage.ratings[beerId].rating;
+            return new Array(parseInt(5 - beerRating));  
+          }
+          
         };
       })
 
