@@ -25,12 +25,13 @@ angular.module( 'controllers', [ ] )
 		}
 	})
 
-	.controller( 'specController' , function ( $scope, $http ) {
+	.controller( 'specController' , function ( $scope, $http, $routeParams ) {
 
 		$scope.resultDetailsBeer = "";
+    var productId = $routeParams.ID;
 
 
-		var urlApiBeers = 'https://quiet-inlet-67115.herokuapp.com/api/beer/Zp50jX';
+		var urlApiBeers = 'https://quiet-inlet-67115.herokuapp.com/api/beer/' + productId;
 		var imageNotFound  =  'http://www.mosaicdevelopmentfl.com/Common/images/jquery/galleria/image-not-found.png';
 		$scope.imageNot = imageNotFound;
 

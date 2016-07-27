@@ -11,7 +11,7 @@ angular.module( 'config', [] )
 					templateUrl: '/templates/age.html',
 					controller: 'ageController'
 				})
-				.when('/specifications',{
+				.when('/specifications/:ID',{
 					templateUrl: '/templates/spec.html',
 					controller: 'specController'
 				})
