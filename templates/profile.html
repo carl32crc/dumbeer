@@ -15,7 +15,7 @@
       </div>
       <div class="col-sm-3">
         <div ng-controller="getRatingController">
-          <i class="glyphicon glyphicon-star" ng-repeat="rating in rating($parent.checkin.beerId)"></i>
+          <i class="glyphicon glyphicon-star" ng-repeat="rating in rating($parent.checkin.beerId) track by $index"></i>
         </div>
       </div>
       <div class="col-sm-2">

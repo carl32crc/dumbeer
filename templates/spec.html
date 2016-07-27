@@ -1,22 +1,23 @@
 <div class="container2">
 	<img src="{{resultDetailsBeer.labels.medium}}" class="img-responsive center-block">
-	<div class="backgroundLogo2">
+	<div class="backgroundLogo2" ng-controller="checkInController">
 		<h1>{{resultDetailsBeer.name}}</h1>	
 		<p>{{resultDetailsBeer.description}}</p>
 		<p>ABV :{{resultDetailsBeer.abv}}%</p>
 	    <p>IBU :{{resultDetailsBeer.style.ibuMax}}</p>
+	    Rating: 
 	    <form>
 		  <fieldset>
-		    <span class="star-cb-group">
-		      <input type="radio" id="rating-5" name="rating" value="5" /><label for="rating-5">5</label>
-		      <input type="radio" id="rating-4" name="rating" value="4" /><label for="rating-4">4</label>
-		      <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
-		      <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
-		      <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
-		      <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+		    <span class="star-cb-group" ng-controller="ratingController">
+		      <input type="radio" id="rating-5" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="5" ng-checked="selectedRating === '5'" /><label for="rating-5">5</label>
+		      <input type="radio" id="rating-4" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="4" ng-checked="selectedRating === '4'" /><label for="rating-4">4</label>
+		      <input type="radio" id="rating-3" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="3" ng-checked="selectedRating === '3'" /><label for="rating-3">3</label>
+		      <input type="radio" id="rating-2" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="2" ng-checked="selectedRating === '2'" /><label for="rating-2">2</label>
+		      <input type="radio" id="rating-1" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="1" ng-checked="selectedRating === '1'" /><label for="rating-1">1</label>
+		      <input type="radio" id="rating-0" name="{{$parent.resultDetailsBeer.id}}Rating" ng-model="$parent.resultDetailsBeer.rating" ng-change="rate($parent.resultDetailsBeer)" value="0" ng-checked="selectedRating === '0'" class="star-cb-clear" /><label for="rating-0">0</label>
 		    </span>
 		  </fieldset>
 		</form>
-	    <p><a href="#" class="btn btn-primary" role="button">Check It</a></p>
+	    <p><button ng-click="checkIn(resultDetailsBeer)" class="btn btn-primary" ng-disabled="hasCheckedIn">Check It</button></p>
 	</div>
 </div>

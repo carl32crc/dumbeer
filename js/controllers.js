@@ -25,45 +25,40 @@ angular.module( 'controllers', [ ] )
 		}
 	})
 
-	.controller( 'specController' , function ( $scope, $http ) {
+	.controller( 'specController' , function ( $scope, $http, $localStorage ) {
 
+    $scope.storage = $localStorage; 
 		$scope.resultDetailsBeer = "";
+
+    
 
 
 		var urlApiBeers = 'https://quiet-inlet-67115.herokuapp.com/api/beer/Zp50jX';
 		var imageNotFound  =  'http://www.mosaicdevelopmentfl.com/Common/images/jquery/galleria/image-not-found.png';
 		$scope.imageNot = imageNotFound;
 
+
 	     
 			$http.get( urlApiBeers )
 				.then( function( dataBeerDetail ) {
 					$scope.resultDetailsBeer = dataBeerDetail.data;
 				    console.log(dataBeerDetail.data);
+            var beerId = dataBeerDetail.data.id;
+            if($scope.storage.ratings !== undefined){
+              if($scope.storage.ratings[beerId].rating !== undefined){
+                var rating = $scope.storage.ratings[beerId].rating;
+
+                $scope.selectedRating = rating;
+                
+                
+              }
+            }
 				})
 		
 	})
 
 	.controller('checkInController', function($scope, $localStorage) {
-        $scope.storage = $localStorage;
-
-        if( $scope.storage.beers === undefined){
-          var beers = [
-            {
-              id: 1,
-              name: 'Estrella',
-            },
-            {
-              id: 2,
-              name: 'Sierra Nevada',
-            },
-            {
-              id: 3,
-              name: 'New Belgium',
-            }
-          ];
-          $scope.storage.beers = beers;   
-        }         
-        
+        $scope.storage = $localStorage;        
         $scope.hasCheckedIn = false;
         $scope.checkIn = function(beer) {
           if($scope.hasCheckedIn === false){
@@ -77,7 +72,7 @@ angular.module( 'controllers', [ ] )
               date: date            
             }
             $scope.storage.checkIn.push(checkInObject)
-            // $scope.hasCheckedIn = true;
+            $scope.hasCheckedIn = true;
           }         
         };
 
@@ -87,16 +82,24 @@ angular.module( 'controllers', [ ] )
         $scope.storage = $localStorage;         
       })
       
+      .controller('ratingController', function($scope, $localStorage) {
+        $scope.storage = $localStorage; 
+        
+        $scope.rate = function(beerObj){
+          if($scope.storage.ratings === undefined){
+            $scope.storage.ratings = {};
+          }
+          $scope.storage.ratings[beerObj.id] = {
+            name: beerObj.name,
+            rating: beerObj.rating
+          }
+        }
+      })
+
       .controller('getRatingController', function($scope, $localStorage){
         $scope.storage = $localStorage;
         $scope.rating = function(beerId){
-          var beerRating = '';
-          $scope.storage.beers.forEach(function(elem){
-            if(elem.id === beerId){
-              beerRating = elem.rating;
-              
-            }
-          })
+          var beerRating = $scope.storage.ratings[beerId].rating;
           return new Array(parseInt(beerRating));
         };
       })
