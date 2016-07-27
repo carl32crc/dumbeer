@@ -53,12 +53,14 @@
 
     <!-- Beginning body content. List of beers displayed-->
     <div class="container backgroundList">
+
+    <h1 class="page-header" ng-show="beerToSearch">Searched beer: {{ beerToSearch }} </h1>
       
       <div class="row">
         <div class="col-sm-3" ng-repeat="beers in resultSearchedBeers | filter : { isOrganic : isOrganic  , style : { categoryId : styleBeer } }">
           <section class="beerResult">
-            <img id="beerImage" src="{{beers.labels.medium || imageNot}}">
-            <p>{{ beers.name }}</p>
+            <img id="beerImage" class="img-thumbnail" src="{{beers.labels.medium || imageNot}}">
+            <p><strong>{{ beers.name }}</strong></p>
             <p><a class="btn btn-default" href="/#/specifications/{{ beers.id }}" role="button">See beer &raquo;</a></p>
           </section>
         </div>
