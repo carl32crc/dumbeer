@@ -35,7 +35,7 @@ body {
 #backgroundBeer {
 	padding-bottom: 80px;
 	padding-top: 80px; 
-	background-image: url("../html/img/beer.jpg");
+	background-image: url("../img/beer.jpg");
 	background-size: auto 100%;
 	background-position: top center;
 
@@ -74,8 +74,7 @@ body {
 }
 
 #beerImage {
-	width: 100%;
-
+	width: 200px;
 	
 }
 
@@ -103,7 +102,7 @@ body {
 .backgroundList {
 	padding-bottom: 80px;
 	padding-top: 80px; 
-	background-image: url("../html/img/dumbeerTransparent.png");
+	// background-image: url("../html/img/dumbeerTransparent.png");
 	background-position: bottom right;
 	background-repeat: no-repeat;
 }
