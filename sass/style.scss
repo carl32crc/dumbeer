@@ -3,19 +3,18 @@ $yellow: #ffc602;
 
 @import "age";
 @import "user-profile";
+@import "custom-stars";
 
-body {
+ body {
 	background: #fff;
 	padding-top: 50px;
 }
 
-#logo { 
-	
+#logo {
 	max-width: 98px;
 	float: left;
 	margin: auto;
 	padding-top: 10px;
-
 }
 
 
@@ -108,4 +107,10 @@ body {
 	background-repeat: no-repeat;
 }
 
+.footer{
+	background-color: #222;
+	color: #fff; 
+	padding: 20px 20px 0px 20px;
+	clear: both;
+}
 
