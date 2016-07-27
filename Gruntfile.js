@@ -13,7 +13,6 @@ module.exports = function(grunt) {
 				files: { 
 					'dist/style.css': 'sass/style.scss',
 					'dist/styles2.css': 'sass/styles2.scss',
-
 				}
 			}
 		},
