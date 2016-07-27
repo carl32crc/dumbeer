@@ -16,6 +16,11 @@ angular.module( 'controllers', [ ] )
 					console.log($scope.resultSearchedBeers);
 				})
 		}
+
+    $scope.advOpt = false;
+    $scope.showOpt = function() {
+      return ( $scope.advOpt = $scope.advOpt ? false : true )
+    }
 	})
 
 	.controller('ageController', function($scope, $localStorage) {
