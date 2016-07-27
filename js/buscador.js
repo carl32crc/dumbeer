@@ -5,10 +5,10 @@ angular.module( 'dumbeer', [ 'ngRoute' ] )
 
 		$scope.resultSearchedBeers = "";
 
-
 		var urlApiBeers = 'https://quiet-inlet-67115.herokuapp.com/api/search/beers?q=';
 		var imageNotFound  =  'http://www.mosaicdevelopmentfl.com/Common/images/jquery/galleria/image-not-found.png';
 		$scope.imageNot = imageNotFound;
+
 
 		$scope.submit = function() {
 
