@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Dumbeer Home</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="../dist/style.css">
+
+
+
+
+
+  </head>
+
+  <body>
+    <!-- BEGGINING HEADER . Includes logo and user icon -->
+    <header>
+      <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+          <a><img id="logo" src="img/dumbeer.png"></img></a>
+          <a><img id="userIcon" src="img/user.png"></img></a>
+        </div>
+      </nav>
+    </header>
+    <!-- /HEADER -->
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <div class="jumbotron" id="backgroundBeer">
+      <div class="container">
+          <!--beer bakground picture by means of CSS-->
+
+          <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+              <form class="navbar-form navbar-left" role="search" id="searchBar">
+                <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn glyphicon glyphicon-search"></button>
+              </form> 
+            </div>
+          </div>
+
+
+          <div class="row">
+            <div class="col-xs-6 col-xs-offset-3">
+               <p>Advanced Options</p>
+            </div>
+          </div>
+
+        <div class="row">
+          <div class="col-xs-6 col-xs-offset-3">
+
+            <!--beggining 1st filter options-->
+            <ul class="dropdown">
+              <a href="#" class="dropdown-toggle" id="advancedOptions" data-toggle="dropdown">Type of Beer<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-plus-title">Type of Beer<b class="pull-right glyphicon glyphicon-chevron-up"></b></li>
+                <li><a href="#">Irish Dry Style Stout</a></li>
+                <li><a href="#">London Sweet Style Stout</a></li>
+                <li><a href="#">Foreign Style Stout</a></li>
+                <li><a href="#">Oatmeal Stout</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Other</a></li>
+              </ul>
+            </ul>
+            <!--/1st filter options-->
+
+            <!--beggining 2nd filter options-->
+            <ul class="dropdown-right">
+              <a href="#" class="dropdown-toggle" id="advancedOptions" data-toggle="dropdown">Region<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-plus-title">Region<b class="pull-right glyphicon glyphicon-chevron-up"></b></li>
+                <li><a href="#">Irish Dry Style Stout</a></li>
+                <li><a href="#">London Sweet Style Stout</a></li>
+                <li><a href="#">Foreign Style Stout</a></li>
+                <li><a href="#">Oatmeal Stout</a></li>
+                <li class="divider"></li>
+                <li><a href="#">Other</a></li>
+              </ul>
+            </ul>
+            <!--/2nd filter options-->
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <!--/Jumbotron-->
+
+    <!-- Beginning body content. List of beers displayed-->
+    <div class="container">
+      
+      <div class="row">
+        <div class="col-md-4">
+          <img src="img/beer1.png">
+          <p>Irish Dry Style Stout</p>
+          <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <img src="img/beer2.png">
+          <p>London Sweet Style Stout</p>
+          <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <img src="img/beer3.png">
+          <p>Foreign Style Stout</p>
+          <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <img src="img/beer4.png">
+          <p>Oatmeal Stout</p>
+          <p><a class="btn btn-default" href="#" role="button">See beer &raquo;</a></p>
+        </div>
+      </div>
+
+
+      <footer>
+        <p>&copy; 2016 Company, Inc.</p>
+      </footer>
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+  </body>
+</html>
