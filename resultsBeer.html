@@ -4,6 +4,8 @@
 	<meta charset="UTF-8">
 	<title>Dumbeer</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<link rel="stylesheet" href="dist/style.css">
 	<link rel="stylesheet" type="text/css" href="dist/styles2.css">
 	<script type="text/javascript">
 		var logID = 'log',
@@ -16,13 +18,13 @@
 	</script>
 	
 </head>
-<body class="backgroundLogo">
+<body>
 	<div class="container" ng-controller="details">
 		
-		<div class="container2">
+		<div class="age-box">
 			<img src="{{resultDetailsBeer.labels.medium}}" class="img-responsive center-block">
 		  
-				<div class="backgroundLogo2">
+				
 					<h1>{{resultDetailsBeer.name}}</h1>
 						
 								<p>{{resultDetailsBeer.description}}</p>
@@ -37,12 +39,12 @@
 								      <input type="radio" id="rating-3" name="rating" value="3" /><label for="rating-3">3</label>
 								      <input type="radio" id="rating-2" name="rating" value="2" /><label for="rating-2">2</label>
 								      <input type="radio" id="rating-1" name="rating" value="1" /><label for="rating-1">1</label>
-								      <input type="radio" id="rating-0" name="rating" value="0" class="star-cb-clear" /><label for="rating-0">0</label>
+								     
 								    </span>
 								  </fieldset>
 								</form>
 							    <p><a href="#" class="btn btn-primary" role="button">Check It</a></p>
-							</div>
+							
 			</div>
 		
 	</div>

@@ -4,8 +4,14 @@ $unchecked-star: '\2606';
 $unchecked-color: #888;
 $checked-star: '\2605';
 $checked-color: #e52;
+$yellow: #ffc602;
 
 .star-cb-group {
+  text-align: right;
+  display: flex;
+  justify-content:center;
+
+  
   /* remove inline-block whitespace */
   font-size: 0;
   * {
@@ -20,7 +26,6 @@ $checked-color: #e52;
     & + label {
       /* only enough room for the star */
       display: inline-block;
-      overflow: hidden;
       text-indent: 9999px;
       width: 1em;
       white-space: nowrap;
@@ -71,12 +76,11 @@ $checked-color: #e52;
 }
 
 body {
-  background: #333;
+  background: $yellow;
   color: $unchecked-color;
 }
 fieldset {
   border: 0;
-  background: #222;
   width: 5em;
   border-radius: 1px;
   padding: 1em 1.5em 0.9em;
