@@ -1,9 +1,12 @@
 .left-bar {
+	display: none;
+	position: relative;
 	padding: 10px;
 	background: $yellow;
 	color: white;
 	text-align: center;
 	@media screen and (min-width: 600px){
+		display: block;
 		width: 20%;
 		height: 100%;
 		padding-top: 70px;
@@ -33,7 +36,7 @@
 .imgUser {
 	position: absolute;
 	bottom: 10px;
-	left: 10px;
+	left: 20px;
 	max-width: 100px;
 	@media screen and (min-width: 600px){
 		max-width: 100%;
