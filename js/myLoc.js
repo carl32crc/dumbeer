@@ -5,6 +5,8 @@ angular.module( 'controllers' )
 
     window.onload = getMyLocation;
 
+    $scope.storage = $localStorage;
+
     var map;
 
     //Comprueba que el navegador tenga soporte para la geolocalizacion
@@ -87,7 +89,7 @@ angular.module( 'controllers' )
      
       if (placeResult) {
         var marker = new google.maps.Marker({position: latLng, map: map, animation: google.maps.Animation.DROP, clickable: true});
-        var content = placeResult.name+'<br/>'+placeResult.vicinity;
+        var content = placeResult.name+'<br/>'+placeResult.vicinity + '<br><button ng-click="locSubmit('+placeResult.name+')">Get Location</button>';
         addInfoWindow(marker, latLng, content);
       }else {
         var marker = new google.maps.Marker(markerOptionsMyFlag);
@@ -95,6 +97,12 @@ angular.module( 'controllers' )
         addInfoWindow(marker, latLng, content);
       }
 
+    }
+
+    $scope.locSubmit = function( bar ){
+        var lastChekIn = $scope.storage.checkIn.pop();
+        lastChekIn.location = bar;
+        $scope.storage.checkIn.push(lastChekIn);
     }
 
 
