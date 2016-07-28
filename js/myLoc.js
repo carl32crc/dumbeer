@@ -89,7 +89,7 @@ angular.module( 'controllers' )
      
       if (placeResult) {
         var marker = new google.maps.Marker({position: latLng, map: map, animation: google.maps.Animation.DROP, clickable: true});
-        var content = placeResult.name+'<br/>'+placeResult.vicinity + '<br><a href="/#/specification/id/'+ $routeParams.ID +'/bar/' + encodeURIComponent(placeResult.name) + '">Get Location</a>';
+        var content = placeResult.name+'<br/>'+placeResult.vicinity + '<br><a href="/#/specifications/id/'+ $routeParams.ID +'/bar/' + encodeURIComponent(placeResult.name) + '">Get Location</a>';
         addInfoWindow(marker, latLng, content);
       }else {
         var marker = new google.maps.Marker(markerOptionsMyFlag);
@@ -98,13 +98,6 @@ angular.module( 'controllers' )
       }
 
     }
-
-    $scope.locSubmit = function( bar ){
-        var lastChekIn = $scope.storage.checkIn.pop();
-        lastChekIn.location = bar;
-        $scope.storage.checkIn.push(lastChekIn);
-    }
-
 
     //funcion para agregar la informacion en la ventana
     function addInfoWindow(marker, latLng, content) {

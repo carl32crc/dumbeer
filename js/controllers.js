@@ -1,5 +1,9 @@
 angular.module( 'controllers', [ ] )
-	
+	.run(function($localStorage, $location){
+    if($localStorage.oldEnough === false || $localStorage.oldEnough === undefined ){
+      $location.path( "/" );
+    }
+  })
 	.controller('homeController', function($scope, $http, $localStorage){
 
 		$scope.resultSearchedBeers = "";
@@ -39,19 +43,29 @@ angular.module( 'controllers', [ ] )
     }
 	})
 
-	.controller('ageController', function($scope, $localStorage) {
-		$scope.storage = $localStorage;
+	.controller('ageController', function($scope, $localStorage, $location) {
+		$scope.storage = $localStorage;    
+
 		$scope.saveAge = function(){
 			$scope.storage.oldEnough = true;
+      $location.path( "/home" );
 		}
+    if($scope.storage.oldEnough === true){
+      $location.path( "/home" );
+    }
 	})
 
-	.controller( 'specController' , function ( $scope, $http, $localStorage, $routeParams ) {
+	.controller( 'specController' , function ( $scope, $http, $localStorage, $routeParams, $location ) {
 
     $scope.storage = $localStorage; 
 		$scope.resultDetailsBeer = "";
     var productId = $routeParams.ID;
-    console.log($routeParams.BARNAME)
+    if($routeParams.BARNAME){
+      var lastChekIn = $scope.storage.checkIn.pop();
+      lastChekIn.location = $routeParams.BARNAME;
+      $scope.storage.checkIn.push(lastChekIn);
+        $location.path( "/myprofile" );
+    }
     
 
 
@@ -82,6 +96,7 @@ angular.module( 'controllers', [ ] )
 	.controller('checkInController', function($scope, $localStorage) {
         $scope.storage = $localStorage;        
         $scope.hasCheckedIn = false;
+        $scope.$parent.showMap = false;
         $scope.checkIn = function(beer) {
           if($scope.hasCheckedIn === false){
             if($scope.storage.checkIn === undefined){
@@ -101,6 +116,7 @@ angular.module( 'controllers', [ ] )
             }
             $scope.storage.checkIn.push(checkInObject)
             $scope.hasCheckedIn = true;
+            $scope.$parent.showMap = true;
           }         
         };
 

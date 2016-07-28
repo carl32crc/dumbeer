@@ -9,7 +9,7 @@
         <span class="img-circle" style="background-image:url({{checkin.label}})"></span>
       </div>
       <div class="col-sm-4">
-        <p><strong>{{ checkin.beerName }}</strong></p>
+        <p><strong>{{ checkin.beerName }}</strong> <span ng-show="checkin.location">en</span> {{checkin.location}}</p>
         <time>{{ checkin.date | date : 'short' }}</time>
       </div>
       <div class="col-sm-3">
@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="col-sm-3">
-        <a href="#/specifications/{{ checkin.beerId }}" class="btn btn-default">Specifications</a>
+        <a href="#/specifications/id/{{ checkin.beerId }}" class="btn btn-default">Specifications</a>
       </div>
     </div>
 </section>

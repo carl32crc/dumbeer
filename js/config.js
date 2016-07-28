@@ -5,8 +5,8 @@ angular.module( 'config', [] )
 			$routeProvider
 
 				.when('/',{
-					templateUrl: 'templates/home.html',
-					controller: 'homeController'
+					templateUrl: 'templates/age.html',
+					controller: 'ageController'
 				})
 				.when('/home',{
 					templateUrl: 'templates/home.html',

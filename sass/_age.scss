@@ -5,7 +5,8 @@
 	height: 100%;
 	top: 0;
 	left: 0;
-	background: url("../html/img/dumbeer.png") no-repeat bottom right $yellow;
+	background: url("../img/dumbeer.png") no-repeat bottom right $yellow;
+	z-index: 99999999;
 }
 .age-box {
 	width: 90%;
