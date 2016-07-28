@@ -3,19 +3,18 @@ $yellow: #ffc602;
 
 @import "age";
 @import "user-profile";
+@import "custom-stars";
 
-body {
+ body {
 	background: #fff;
 	padding-top: 50px;
 }
 
-#logo { 
-	
+#logo {
 	max-width: 98px;
 	float: left;
 	margin: auto;
 	padding-top: 3px;
-
 }
 
 .navbar-fixed-top {
@@ -112,6 +111,7 @@ body {
 	background-repeat: no-repeat;
 }
 
+
 .input-group {
 	margin-top: 10px;
 }
@@ -123,5 +123,11 @@ body {
 	color: #5a5a5a;
 }
 
+.footer{
+	background-color: #222;
+	color: #fff; 
+	padding: 20px 20px 0px 20px;
+	clear: both;
+}
 
 

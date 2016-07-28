@@ -8,11 +8,15 @@ angular.module( 'config', [] )
 					templateUrl: '/templates/home.html',
 					controller: 'homeController'
 				})
+				.when('/home',{
+					templateUrl: '/templates/home.html',
+					controller: 'homeController'
+				})
 				.when('/age',{
 					templateUrl: '/templates/age.html',
 					controller: 'ageController'
 				})
-				.when('/specifications/:ID',{
+				.when('/specifications:ID',{
 					templateUrl: '/templates/spec.html',
 					controller: 'specController'
 				})
@@ -20,7 +24,7 @@ angular.module( 'config', [] )
 					templateUrl: '/templates/profile.html',
 					controller: 'checkInController'
 				})
-				.otherwise({ redirectTo: '/' }); ;
+				//.otherwise({ redirectTo: '/' }); ;
 
 
 	})
