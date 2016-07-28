@@ -5,7 +5,7 @@ angular.module( 'controllers', [ ] )
 		$scope.resultSearchedBeers = "";
 
 		var urlApiBeers = 'https://quiet-inlet-67115.herokuapp.com/api/search/beers?q=';
-		var imageNotFound = '../img/image-not-found.png';
+		var imageNotFound = 'img/image-not-found.png';
 		$scope.imageNot = imageNotFound;
 		$scope.submit = function() {
 
@@ -73,8 +73,7 @@ angular.module( 'controllers', [ ] )
             }
 
             var date = new Date();
-            var label = 'http://www.mosaicdevelopmentfl.com/Common/images/jquery/galleria/image-not-found.png';
-
+            var label = 'img/image-not-found.png';
             if(beer.labels !== undefined){
               label = beer.labels.medium;
             }
