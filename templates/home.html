@@ -10,8 +10,18 @@
 						<button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
 					</span>
 				</div>
-				<div class="input-group">
-					<button type="button" class="btn btn-default" ng-click="showOpt()">Advanced filters</button>
+				<div class="search-options">
+					<div class="row">
+						<div class="col-sm-6">
+							<button type="button" class="btn btn-default" ng-click="showOpt()">Advanced filters</button>
+						</div>
+						<div class="col-sm-6">
+							<select class="form-control" ng-change="change()" ng-model="selectSearcher">
+								<option value="">Last searches</option>
+								<option value="{{beer.url}}" ng-repeat="beer in storage.searches">{{ beer.beer }}</option>
+							</select>
+						</div>
+					</div>
 					<div ng-show="advOpt" class="advOptions">
 						<div class="row">
 							<fieldset class="col-xs-6"> <strong> Organic:</strong>
@@ -41,8 +51,9 @@
 						</div>
 					</div>
 				</div>
-			</form>
 
+			</div>
+			</form>
       </div>
     </div>
 
