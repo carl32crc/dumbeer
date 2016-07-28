@@ -1,7 +1,7 @@
 
 angular.module( 'controllers' )
   
-  .controller('myLocation', function($scope, $localStorage){ 
+  .controller('myLocation', function($scope, $localStorage, $routeParams){ 
 
     window.onload = getMyLocation;
 
@@ -89,7 +89,7 @@ angular.module( 'controllers' )
      
       if (placeResult) {
         var marker = new google.maps.Marker({position: latLng, map: map, animation: google.maps.Animation.DROP, clickable: true});
-        var content = placeResult.name+'<br/>'+placeResult.vicinity + '<br><button ng-click="locSubmit('+placeResult.name+')">Get Location</button>';
+        var content = placeResult.name+'<br/>'+placeResult.vicinity + '<br><a href="/#/specification/id/'+ $routeParams.ID +'/bar/' + encodeURIComponent(placeResult.name) + '">Get Location</a>';
         addInfoWindow(marker, latLng, content);
       }else {
         var marker = new google.maps.Marker(markerOptionsMyFlag);

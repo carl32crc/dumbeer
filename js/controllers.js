@@ -51,7 +51,7 @@ angular.module( 'controllers', [ ] )
     $scope.storage = $localStorage; 
 		$scope.resultDetailsBeer = "";
     var productId = $routeParams.ID;
-
+    console.log($routeParams.BARNAME)
     
 
 
@@ -140,6 +140,13 @@ angular.module( 'controllers', [ ] )
           }
           
         };
+      })
+
+      .controller('regLocationController', function ( $scope, $routeParams ) {
+
+        $scope.name = $routeParams.BARNAME;
+        console.log($routeParams.BARNAME)
+
       })
 
 
