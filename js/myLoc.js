@@ -3,8 +3,6 @@ angular.module( 'controllers' )
   
   .controller('myLocation', function($scope, $localStorage, $routeParams){ 
 
-    window.onload = getMyLocation;
-
     $scope.storage = $localStorage;
 
     var map;
@@ -19,13 +17,15 @@ angular.module( 'controllers' )
       }
     }
 
+    getMyLocation();
+
     //Guarda nuestra localizacion  actual,la almacena y muestra el mapa con nuestra posicion.
     function displayLocation(position) {
       var latitude = position.coords.latitude;
       var longitude = position.coords.longitude;
 
       var latLng = new google.maps.LatLng(latitude, longitude);
-
+      console.log(latLng)
       showMap(latLng);
 
       addNearByPlaces(latLng);
@@ -42,7 +42,8 @@ angular.module( 'controllers' )
       //Configuracion del mapa
       var mapOptions = {
         center: latLng,
-        zoom: 18
+        zoom: 18,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
       };
       map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
     }

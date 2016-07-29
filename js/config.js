@@ -14,7 +14,7 @@ angular.module( 'config', [] )
 				})
 				.when('/specifications/id/:ID',{
 					templateUrl: 'modules/details/spec.html',
-					controller: 'specController'
+					controller: 'specController',
 				})
 				.when('/specifications/id/:ID/bar/:BARNAME',{
 					templateUrl: 'modules/details/spec.html',

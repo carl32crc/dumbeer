@@ -133,4 +133,13 @@ $yellow: #ffc602;
 	text-align: right;
 }
 
+.map-show {
+	visibility: visible;
+	opacity: 1;
+}
+.map-hide {
+	visibility: hidden;
+	opacity: 0;
+}
+
 

@@ -33,7 +33,7 @@ angular.module( 'specModule', [] )
 	})
 
 
-	.controller('checkInController', function($scope, $localStorage) {
+	.controller('checkInController', function($scope, $localStorage, $location, $anchorScroll) {
 
     $scope.storage = $localStorage;        
     $scope.hasCheckedIn = false;
@@ -62,6 +62,9 @@ angular.module( 'specModule', [] )
         $scope.storage.checkIn.push(checkInObject)
         $scope.hasCheckedIn = true;
         $scope.$parent.showMap = true;
+
+        // $location.hash('map')
+        // $anchorScroll();
       }         
     }
   })

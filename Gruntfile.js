@@ -40,7 +40,11 @@ module.exports = function(grunt) {
 				tasks: ['sass', 'postcss:dist']
 			},
 			js: {
-			    files: 'js/*.js',
+			    files: ['js/*',
+			        	'modules/age/*.js',
+			        	'modules/details/*.js',
+			        	'modules/home/*.js',
+			        	'modules/profile/*.js',],
 			    tasks: ['concat']
 			}
 		},
@@ -71,5 +75,5 @@ module.exports = function(grunt) {
 		}
 	})
 
-	grunt.registerTask('default', ['watch','concat'])
+	grunt.registerTask('default', ['watch'])
 };
