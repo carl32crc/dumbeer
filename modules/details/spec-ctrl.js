@@ -63,6 +63,8 @@ angular.module( 'specModule', [] )
         $scope.hasCheckedIn = true;
         $scope.$parent.showMap = true;
 
+        $scope.$broadcast( 'habemusChekin' )
+
         // $location.hash('map')
         // $anchorScroll();
       }         

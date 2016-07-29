@@ -19,12 +19,11 @@
 			  </fieldset>
 			</form>
 		    <p><button type="button" ng-click="checkIn(resultDetailsBeer)" class="btn btn-primary" ng-disabled="hasCheckedIn">Drink It!</button></p>
-		</div>
 
+		    <div id="map" ng-controller="myLocation">
+				<h3>Where are you drinking it?</h3>
+				<div id='map-canvas'></div>
+			</div>
+		</div>
 	</div>
-	<div id="map" ng-class="showMap===true ? 'map-show' : 'map-hide'" class="age-box">
-		<h3>Where are you drinking it?</h3>
-		<div ng-controller="myLocation"><div id='map-canvas'></div></div>
-	</div>
-	
 </div>
