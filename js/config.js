@@ -5,16 +5,12 @@ angular.module( 'config', [] )
 			$routeProvider
 
 				.when('/',{
-					templateUrl: 'templates/age.html',
+					templateUrl: 'modules/age/age.html',
 					controller: 'ageController'
 				})
 				.when('/home',{
 					templateUrl: 'templates/home.html',
 					controller: 'homeController'
-				})
-				.when('/age',{
-					templateUrl: 'templates/age.html',
-					controller: 'ageController'
 				})
 				.when('/specifications/id/:ID',{
 					templateUrl: 'templates/spec.html',

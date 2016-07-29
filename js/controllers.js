@@ -1,4 +1,4 @@
-angular.module( 'controllers', [ 'profileController' ] )
+angular.module( 'controllers', [ 'profileModule', 'ageModule' ] )
 	.run(function($localStorage, $location){
     if($localStorage.oldEnough === false || $localStorage.oldEnough === undefined ){
       $location.path( "/" );
@@ -43,17 +43,7 @@ angular.module( 'controllers', [ 'profileController' ] )
     }
 	})
 
-	.controller('ageController', function($scope, $localStorage, $location) {
-		$scope.storage = $localStorage;    
-
-		$scope.saveAge = function(){
-			$scope.storage.oldEnough = true;
-      $location.path( "/home" );
-		}
-    if($scope.storage.oldEnough === true){
-      $location.path( "/home" );
-    }
-	})
+	
 
   // details
 
