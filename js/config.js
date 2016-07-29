@@ -9,7 +9,7 @@ angular.module( 'config', [] )
 					controller: 'ageController'
 				})
 				.when('/home',{
-					templateUrl: 'templates/home.html',
+					templateUrl: 'modules/home/home.html',
 					controller: 'homeController'
 				})
 				.when('/age',{
