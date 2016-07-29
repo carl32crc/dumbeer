@@ -6,7 +6,7 @@ angular.module( 'controllers' )
     $scope.storage = $localStorage;
 
     $scope.$on( 'habemusChekin', function (){
-      console.log('hola?');
+
       var map;
 
       //Comprueba que el navegador tenga soporte para la geolocalizacion
@@ -92,7 +92,7 @@ angular.module( 'controllers' )
        
         if (placeResult) {
           var marker = new google.maps.Marker({position: latLng, map: map, animation: google.maps.Animation.DROP, clickable: true});
-          var content = placeResult.name+'<br/>'+placeResult.vicinity + '<br><a href="/#/specifications/id/'+ $routeParams.ID +'/bar/' + encodeURIComponent(placeResult.name) + '">Get Location</a>';
+          var content = placeResult.name+'<br/>'+placeResult.vicinity + '<br><a class="btn btn-primary" href="/#/specifications/id/'+ $routeParams.ID +'/bar/' + encodeURIComponent(placeResult.name) + '">I\'m here</a>';
           addInfoWindow(marker, latLng, content);
         }else {
           var marker = new google.maps.Marker(markerOptionsMyFlag);

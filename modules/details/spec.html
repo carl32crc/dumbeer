@@ -20,7 +20,7 @@
 			</form>
 		    <p><button type="button" ng-click="checkIn(resultDetailsBeer)" class="btn btn-primary" ng-disabled="hasCheckedIn">Drink It!</button></p>
 
-		    <div id="map" ng-controller="myLocation">
+		    <div id="map" ng-controller="myLocation" ng-show="showMap">
 				<h3>Where are you drinking it?</h3>
 				<div id='map-canvas'></div>
 			</div>

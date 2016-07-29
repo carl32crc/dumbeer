@@ -37,9 +37,10 @@ angular.module( 'specModule', [] )
 
     $scope.storage = $localStorage;        
     $scope.hasCheckedIn = false;
-    $scope.$parent.showMap = false;
+    $scope.showMap = false;
 
     $scope.checkIn = function(beer) {
+
       if($scope.hasCheckedIn === false){
         if($scope.storage.checkIn === undefined){
           $scope.storage.checkIn = [];
@@ -61,7 +62,7 @@ angular.module( 'specModule', [] )
 
         $scope.storage.checkIn.push(checkInObject)
         $scope.hasCheckedIn = true;
-        $scope.$parent.showMap = true;
+        $scope.showMap = true;
 
         $scope.$broadcast( 'habemusChekin' )
 
