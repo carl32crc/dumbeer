@@ -1,1 +1,3 @@
-angular.module('services',['specServices']);
+angular.module('services',['specServices','homeService']);
+
+

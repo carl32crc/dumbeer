@@ -9,7 +9,7 @@ angular.module( 'config', [] )
 					controller: 'ageController'
 				})
 				.when('/home',{
-					templateUrl: 'templates/home.html',
+					templateUrl: 'modules/home/home.html',
 					controller: 'homeController'
 				})
 				.when('/specifications/id/:ID',{
@@ -24,7 +24,7 @@ angular.module( 'config', [] )
 					templateUrl: 'modules/profile/profile.html',
 					controller: 'historyController'
 				})
-				//.otherwise({ redirectTo: '/' }); ;
+				.otherwise({ redirectTo: '/' }); ;
 
 
 	})
