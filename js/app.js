@@ -1,1 +1,1 @@
-angular.module( 'dumbeer', [ 'ngRoute', 'controllers', 'config', 'ngStorage' ] )
+angular.module( 'dumbeer', [ 'ngRoute', 'controllers', 'config', 'ngStorage', 'services' ] )

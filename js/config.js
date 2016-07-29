@@ -17,11 +17,11 @@ angular.module( 'config', [] )
 					controller: 'ageController'
 				})
 				.when('/specifications/id/:ID',{
-					templateUrl: 'templates/spec.html',
+					templateUrl: 'modules/details/spec.html',
 					controller: 'specController'
 				})
 				.when('/specifications/id/:ID/bar/:BARNAME',{
-					templateUrl: 'templates/spec.html',
+					templateUrl: 'modules/details/spec.html',
 					controller: 'specController'
 				})
 				.when('/myprofile',{
