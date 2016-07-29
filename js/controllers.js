@@ -1,4 +1,4 @@
-angular.module( 'controllers', [ ] )
+angular.module( 'controllers', [ 'profileController' ] )
 	.run(function($localStorage, $location){
     if($localStorage.oldEnough === false || $localStorage.oldEnough === undefined ){
       $location.path( "/" );
@@ -54,6 +54,8 @@ angular.module( 'controllers', [ ] )
       $location.path( "/home" );
     }
 	})
+
+  // details
 
 	.controller( 'specController' , function ( $scope, $http, $localStorage, $routeParams, $location ) {
 
@@ -122,47 +124,23 @@ angular.module( 'controllers', [ ] )
 
       })
 
-      .controller('historyController', function($scope, $localStorage) {
-        $scope.storage = $localStorage;         
-      })
-      
-      .controller('ratingController', function($scope, $localStorage) {
-        $scope.storage = $localStorage; 
-        
-        $scope.rate = function(beerObj){
-          if($scope.storage.ratings === undefined){
-            $scope.storage.ratings = {};
-          }
-          $scope.storage.ratings[beerObj.id] = {
-            name: beerObj.name,
-            rating: beerObj.rating
-          }
-        }
-      })
+  .controller('ratingController', function($scope, $localStorage) {
+    $scope.storage = $localStorage; 
+    
+    $scope.rate = function(beerObj){
+      if($scope.storage.ratings === undefined){
+        $scope.storage.ratings = {};
+      }
+      $scope.storage.ratings[beerObj.id] = {
+        name: beerObj.name,
+        rating: beerObj.rating
+      }
+    }
+  })
 
-      .controller('getRatingController', function($scope, $localStorage){
-        $scope.storage = $localStorage;
-        $scope.rating = function(beerId){
-          if($scope.storage.ratings[beerId] !== undefined){
-            var beerRating = $scope.storage.ratings[beerId].rating;
-            return new Array(parseInt(beerRating));
-          }
-        };
+  .controller('regLocationController', function ( $scope, $routeParams ) {
 
-        $scope.ratingInv = function(beerId){
-          if($scope.storage.ratings[beerId] !== undefined){
-            var beerRating = $scope.storage.ratings[beerId].rating;
-            return new Array(parseInt(5 - beerRating));  
-          }
-          
-        };
-      })
+    $scope.name = $routeParams.BARNAME;
+    console.log($routeParams.BARNAME)
 
-      .controller('regLocationController', function ( $scope, $routeParams ) {
-
-        $scope.name = $routeParams.BARNAME;
-        console.log($routeParams.BARNAME)
-
-      })
-
-
+  })

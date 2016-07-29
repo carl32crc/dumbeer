@@ -25,8 +25,8 @@ angular.module( 'config', [] )
 					controller: 'specController'
 				})
 				.when('/myprofile',{
-					templateUrl: 'templates/profile.html',
-					controller: 'checkInController'
+					templateUrl: 'modules/profile/profile.html',
+					controller: 'historyController'
 				})
 				//.otherwise({ redirectTo: '/' }); ;
 

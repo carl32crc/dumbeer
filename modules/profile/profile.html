@@ -2,9 +2,9 @@
   <img class="imgUser" src="img/dumbeer.png" alt="">
   <!-- <p>User Name</p> -->
 </section>
-<section ng-show="storage.checkIn" ng-controller="historyController" class="profile-content">  
+<section class="profile-content">  
     <h1 class="page-header">My beers</h1>
-    <div class="group" ng-repeat="checkin in storage.checkIn | orderBy : date:true">
+    <div class="group" ng-show="storage.checkIn" ng-repeat="checkin in storage.checkIn | orderBy : date:true">
       <div class="col-sm-2">
         <span class="img-circle" style="background-image:url({{checkin.label}})"></span>
       </div>
