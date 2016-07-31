@@ -4,7 +4,7 @@
           <!--beer bakground picture by means of CSS-->
 
 			<form ng-submit="submit()" class="col-sm-6 col-sm-offset-3 input-group">
-		    	<div  class="input-group">
+		    	<div class="input-group">
 			    	<input type="text" class="form-control" placeholder="Search for..." ng-model="beerToSearch">
 					<span class="input-group-btn">
 						<button class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
@@ -12,10 +12,10 @@
 				</div>
 				<div class="search-options">
 					<div class="row">
-						<div class="col-sm-6">
+						<div class="col-xs-6">
 							<button type="button" class="btn btn-default" ng-click="showOpt()">Advanced filters</button>
 						</div>
-						<div class="col-sm-6">
+						<div class="col-xs-6">
 							<select class="form-control" ng-change="change()" ng-model="selectSearcher">
 								<option value="">Last searches</option>
 								<option value="{{beer.url}}" ng-repeat="beer in storage.searches">{{ beer.beer }}</option>
