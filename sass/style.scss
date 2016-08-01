@@ -134,11 +134,26 @@ $yellow: #ffc602;
 	width: 100%;
 }
 
-.footer{
-	background-color: #222;
+
+html
+{
+    position: relative; 
+    min-height: 100%;
+}
+
+
+
+/*----------------------------------------------------------*/
+
+footer
+{
+    width: 100%;
+    bottom: -20px;
+    z-index: -1;
+    position: absolute;
+    background-color: #222;
 	color: #fff; 
 	padding: 20px;
-	clear: both;
 	text-align: right;
 }
 
@@ -150,5 +165,6 @@ $yellow: #ffc602;
 	visibility: hidden;
 	opacity: 0;
 }
+
 
 
