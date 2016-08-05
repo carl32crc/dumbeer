@@ -92,7 +92,7 @@ angular.module( 'controllers' )
        
         if (placeResult) {
           var marker = new google.maps.Marker({position: latLng, map: map, animation: google.maps.Animation.DROP, clickable: true});
-          var content = placeResult.name+'<br/>'+placeResult.vicinity + '<br><a class="btn btn-primary" href="dumbeer/#/specifications/id/'+ $routeParams.ID +'/bar/' + encodeURIComponent(placeResult.name) + '">I\'m here</a>';
+          var content = placeResult.name+'<br/>'+placeResult.vicinity + '<br><a class="btn btn-primary" href="bar/' + encodeURIComponent(placeResult.name) + '">I\'m here</a>';
           addInfoWindow(marker, latLng, content);
         }else {
           var marker = new google.maps.Marker(markerOptionsMyFlag);
